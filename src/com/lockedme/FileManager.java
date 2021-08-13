@@ -39,7 +39,7 @@ public class FileManager {
 	 * @param content
 	 * @return boolean
 	 */
-	public static boolean creatFiles(String folderPath, String fileName, List<String> content) {
+	public static boolean createFiles(String folderPath, String fileName, List<String> content) {
 
 		try {
 
