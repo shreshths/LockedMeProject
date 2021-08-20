@@ -24,7 +24,7 @@ public class LockedMe {
 			switch (ch) {
 
 			case 1:
-				getAllFiles();
+				displayListOfFiles();
 				break;
 
 			case 2:
@@ -69,16 +69,25 @@ public class LockedMe {
 	/**
 	 * This method is called when user choose Option-1:Display all files.
 	 */
-	public static void getAllFiles() {
+	public static void displayListOfFiles() {
 
 		// Getting all the file names into the List of String
 		List<String> fileNames = FileManager.getAllFiles(folderPath);
 
-		// Sorting in ascending order
-		Collections.sort(fileNames);
+		// Check if the directory is empty
+		if (fileNames.isEmpty())
+			System.out.println("No files in the directory");
+		// Otherwise, display the list of files
+		else {
+			System.out.println("The list of files is below:");
 
-		for (String f : fileNames)
-			System.out.println(f);
+			// Sorting in ascending order
+			Collections.sort(fileNames);
+
+			// Displaying the list
+			for (String f : fileNames)
+				System.out.println(f);
+		}
 	}
 
 	/**
